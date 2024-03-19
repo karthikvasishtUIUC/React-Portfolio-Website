@@ -91,10 +91,6 @@ npm install
 npm start
 ```
 
-## Linking Portfolio to GitHub
-
-Generate a classic GitHub personal access token following these [instructions](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-personal-access-token-classic) (make sure you don't select any scope just generate a simple token). If you are using [GitHub Actions](#configuring-github-actions-recommended) to deploy your portfolio you can skip this section.
-
 1. Create a file called .env in the root directory of your project (if not done already in section: [How To Use](#how-to-use))
 
 Note: Configuring environment variables before deploying your portfolio is highly recommended as some components depend on API data. 
@@ -137,76 +133,10 @@ Optionally, you can link the blogs section to your medium user account:
 
 * Inside the .env file, add key `MEDIUM_USERNAME` and assign your Medium username
 
-```env
-// .env
-MEDIUM_USERNAME = "YOUR MEDIUM USERNAME"
-```
-
-* For Github Action, change the environment variable `MEDIUM_USERNAME` in `.github/workflows/deploy.yml`
-
-Set `displayMediumBlogs` to true or false in portofolio.js to display fetched Medium blogs, defaults to true.
-
 ## Change and customize every section according to your need.
 
 #### Personalize page content in `/src/portfolio.js` & modify it as per your need. You will also need to modify `index.html` to change the title and metadata to provide accurate SEO for your personal portfolio.
 
-```javascript
-/* Change this file to get your Personal Porfolio */
-
-const greeting = {
-  /* Your Summary And Greeting Section */
-  title: "Hi all I'm Saad",
-  subTitle: emoji("A passionate Full Stack Software Developer 🚀"),
-  resumeLink: "https://drive.google.com/file/d/1ofFdKF_mqscH8WvXkSObnVvC9kK7Ldlu/view?usp=sharing"
-};
-
-const socialMediaLinks = {
-  /* Your Social Media Link */
-  github: "https://github.com/saadpasta",
-  linkedin: "https://www.linkedin.com/in/saadpasta/",
-  gmail: "saadpasta70@gmail.com",
-  gitlab: "https://gitlab.com/saadpasta",
-  facebook: "https://www.facebook.com/saad.pasta7"
-};
-
-
-const skillsSection = { .... }
-
-const techStack = { .... }
-
-const workExperience = { .... }
-
-const openSource = { .... }
-
-const bigProjects = { .... }
-
-const achievementSection = { .... }
-
-const blogSection = { .... }
-
-const contactInfo = { .... }
-
-const twitterDetails = { ... }
-
-```
-
-#### Using Emojis
-
-For adding emoji 😃 into the texts in `Portfolio.js`, use the `emoji()` function and pass the text you need as an argument. This would help in keeping emojis compatible across different browsers and platforms.
-
-#### Customize Lottie Animations
-
-You can choose a Lottie and download it in json format from from sites like [this](https://lottiefiles.com/). In `src/assets/lottie`, replace the Lottie json file you want to alter with the same file name. If you want to change the Lottie options, go to `src/components/displayLottie/DisplayLottie.js` and change the `defaultOptions` object, you can refer [lottie-react docs](https://www.npmjs.com/package/lottie-react) for more info on the `defaultOptions` object.
-
-#### Adding Twitter Time line to your Page
-Insert your Twitter username in `portfolio.js` to show your recent activity on your page.
-
-```javascript
-const twitterDetails = {
-  userName : "Your Twitter Username"
-};
-```
-Note: Don't use `@` symbol when adding username.
 
 ## Deployment
 When you are done with the setup, you should host your website online.
@@ -250,27 +180,3 @@ For more information, read [hosting on Netlify](https://create-react-app.dev/doc
 - [react-headroom](https://github.com/KyleAMathews/react-headroom)
 - [color-thief](https://github.com/lokesh/color-thief)
 
-## Illustrations
-- [UnDraw](https://undraw.co/illustrations)
-- [Lottie by Oblikweare](https://lottiefiles.com/oblikweare)
-
-
-## For the Future
-If you can help us with these. Please don't hesitate to open a [pull request](https://github.com/saadpasta/developerFolio/pulls).
-
-- Connect with LinkedIn to get Summary, Skills, Education and Experience
-
-- Move to Gatsby
-
-- Add More Sections
-
-## Project Maintainers 
-
-<table>
-  <tr>
-    <td align="center"><a href="http://saadpasta.github.io"><img src="https://avatars2.githubusercontent.com/u/23307811?v=4" width="100px;" alt=""/><br /><sub><b>Saad Pasta</b></sub></a></td>
-    <td align="center"><a href="https://github.com/kartikcho"><img src="https://avatars1.githubusercontent.com/u/48270786?v=4" width="100px;" alt=""/><br /><sub><b>Kartik Choudhary</b></sub></a></td>
-    <td align="center"><a href="https://github.com/naveen521kk"><img src="https://avatars1.githubusercontent.com/u/49693820?v=4" width="100px;" alt=""/><br /><sub><b>Naveen M K</b></sub></a></td>
-    <td align="center"><a href="http://www.muhammadhasham.com"><img src="https://avatars0.githubusercontent.com/u/17927649?v=4" width="100px;" alt=""/><br /><sub><b>Muhammad Hasham</b></sub></a></td>
-  </tr>
-</table>
